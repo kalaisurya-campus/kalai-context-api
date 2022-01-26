@@ -1,0 +1,96 @@
+.sign-ups {
+    width: 100%;
+    height: 92.2vh;
+    // border: 2px solid red;
+    background-color: lightcyan;
+    .hs {
+        color: blue;
+        font-weight: 700;
+    }
+    .signs {
+        border: none;
+        outline: none;
+        background-color: lightpink;
+        font-weight: 800;
+        padding: 10px 40px;
+        border-radius: 13px;
+        margin-left: 20px;
+    }
+    .signs:hover {
+        background-color: aqua;
+        cursor: pointer;
+    }
+    .form-div {
+        width: 100%;
+        height: 80%;
+        // border: 3px solid orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            // border: 2px solid black;
+            background-image: url("https://c4.wallpaperflare.com/wallpaper/9/519/764/mountains-best-for-desktop-background-wallpaper-preview.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            width: 50%;
+            height: 80%;
+            gap: 30px;
+            overflow: hidden;
+            position: relative;
+            input {
+                width: 100%;
+                border: none;
+                outline: none;
+                border-bottom: 2px solid black;
+                padding: 10px;
+                border-radius: 6px;
+                cursor: pointer;
+                color: white;
+                font-size: 1.3em;
+            }
+            ::placeholder {
+                color: cyan;
+                font-size: 1.3em;
+                font-weight: 500;
+            }
+            .logins_button {
+                border: none;
+                outline: none;
+                padding: 10px 50px;
+                border-radius: 10px;
+                font-weight: 800;
+                background-color: aqua;
+                letter-spacing: 2px;
+                text-shadow: 10px;
+            }
+            .logins_button:hover {
+                background-color: lightpink;
+                cursor: pointer;
+            }
+            .splits_mons {
+                display: flex;
+                .mon-button {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    margin-top: 20px;
+                    position: absolute;
+                    right: 34%;
+                }
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
