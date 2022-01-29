@@ -1,86 +1,83 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router";
+import { auth } from "../../firebasedata";
 import Navbar from "../nabar/Navbar";
-import { auth } from "../../firebasesfile";
 import "./styles/Login.scss";
 function Login(props) {
-  const histroy = useHistory();
-  //   console.log(histroy);
-  const [email, SetEmail] = useState("");
-  const [password, SetPassword] = useState("");
-  const [show, SetShoePassword] = useState(false);
-  const onsubmitfire = async (e) => {
+  const [emails, SetEmails] = useState("");
+  const [passwords, SetPasswords] = useState("");
+  const [show, SetShowPasword] = useState(false);
+  const history = useHistory();
+
+  const submits = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    console.log(emails, passwords);
     try {
-      const result = await auth.signInWithEmailAndPassword(email, password);
-      histroy.push("/home");
-      alert(`welcome too ${result.user.email}`);
-      console.log(result);
-      // window.notify.toast({ html: `welcome ${result.user.email}`, classes: "green" });
+      const results = await auth.signInWithEmailAndPassword(emails, passwords);
+      window.M.toast({
+        html: `welcome too ${results.user.emails}`,
+        classes: "green",
+      });
+      history.push("/home");
     } catch (err) {
-      // window.M.toast({ html: err.Message, classes: "green" });
-      console.log(err);
+      window.M.toast({ html: err.message, classes: "red" });
     }
   };
   return (
-    <>
+    <div className="main_login">
       <Navbar />
-      <div className="form_main">
-        <div className="split">
-          <h1 className="text-center" className="hs">
-            Login
-          </h1>
-        </div>
-        <button onClick={() => histroy.goBack()} className="signs">
-          click back home
-        </button>
-        <div className="form-div">
-          <form onSubmit={onsubmitfire}>
-            <div>
+      <h1>Login page</h1>
+      <form onSubmit={(e) => submits(e)}>
+        <div className="main">
+          <div className="email">
+            <div className="icons">
+              <i class="material-icons">account_circle</i>
+            </div>
+            <div className="right_box">
               <input
                 type="email"
-                placeholder="Entre email"
+                placeholder="Enter email"
+                value={emails}
                 name="email"
-                value={email}
-                onChange={(e) => SetEmail(e.target.value)}
-              ></input>
+                onChange={(e) => SetEmails(e.target.value)}
+              />
             </div>
-            <div className="splits_mons">
-              <div>
-                <input
-                  type={show ? "text" : "password"}
-                  placeholder="Entre password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => SetPassword(e.target.value)}
-                ></input>
-              </div>
-
-              <div>
-                <button
-                  className="mon-button"
-                  onClick={() => SetShoePassword(!show)}
-                >
-                  {show ? (
-                    <div>
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE9pooie-hkFnk-Ba0I6Yr8A4Zlwi3buf0Rw&usqp=CAU" />
-                    </div>
-                  ) : (
-                    <div>
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8r-i5MLjF90A9ejHcRG6Mgrk8MYENVFxpng&usqp=CAU" />
-                    </div>
-                  )}
-                </button>
-              </div>
+          </div>
+          <div className="password">
+            <div className="icons">
+              <p
+                onClick={() => SetShowPasword(!show)}
+                className="btn_page"
+              >
+                {show ? (
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRBjObZUh2HM4ZsdokpWI744O3Xj3g2Ovy2w&usqp=CAU"
+                    className="m_btn"
+                  />
+                ) : (
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5bzsNLr__FnpQyVsbmadZkQYocyexYapQtknbdTnIrfh58gU-c_oxYCd9sdIrFxVe_pk&usqp=CAU"
+                    className="m_btn"
+                  />
+                )}
+              </p>
             </div>
-            <div>
-              <button className="logins_button mt-3">Login</button>
+            <div className="right_box">
+              <input
+                type={show ? "text" : "password"}
+                placeholder="Entre password"
+                value={passwords}
+                name="password"
+                onChange={(e) => SetPasswords(e.target.value)}
+              />
             </div>
-          </form>
+          </div>
+          <div className="buttons">
+            <button className="submits">Submit</button>
+          </div>
         </div>
-      </div>
-    </>
+      </form>
+    </div>
   );
 }
 

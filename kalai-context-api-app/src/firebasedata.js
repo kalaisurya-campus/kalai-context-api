@@ -3,9 +3,9 @@ import "firebase/compat/auth";
 
 import "firebase/compat/firestore";
 
-import configs from "./configs";
+import config from './config';
 
-firebase.initializeApp(configs);
+firebase.initializeApp(config);
 
 const auth = firebase.auth();
 
