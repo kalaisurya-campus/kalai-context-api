@@ -8,8 +8,8 @@ function Navbar(props) {
   return (
     <div className="navbars">
       <div className="navbar_list py-3">
-        <div className="left_nabar">
-          <span>KalaiNazriya</span>
+        <div className="left_nabar px-3">
+          <h4>KalaiRoman</h4>
         </div>
         <div className="right_navbar">
           <Link to="/login" className="links">

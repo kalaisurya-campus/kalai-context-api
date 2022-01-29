@@ -26,9 +26,11 @@ function Login(props) {
   return (
     <div className="main_login">
       <Navbar />
-      <h1>Login page</h1>
-      <form onSubmit={(e) => submits(e)}>
+
+      <form onSubmit={(e) => submits(e)} >
+      
         <div className="main">
+        <h1 className="">Login page</h1>
           <div className="email">
             <div className="icons">
               <i class="material-icons">account_circle</i>
@@ -65,7 +67,7 @@ function Login(props) {
             <div className="right_box">
               <input
                 type={show ? "text" : "password"}
-                placeholder="Entre password"
+                placeholder="Enter password"
                 value={passwords}
                 name="password"
                 onChange={(e) => SetPasswords(e.target.value)}
