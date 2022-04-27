@@ -5,20 +5,17 @@ function AnotherHome(props) {
   useEffect(() => {
     const sun = document.querySelector(".sun");
     const body = document.querySelector(".body");
-const cars1=document.querySelector(".car1");
-const cars2=document.querySelector(".car2");
+    const cars1 = document.querySelector(".car1");
+    const cars2 = document.querySelector(".car2");
     sun.onclick = function () {
-      alert( "welcome too home page");
-    
+      alert("welcome too home page");
     };
-    cars1.onclick=function()
-    {
+    cars1.onclick = function () {
       alert("welcome too car 1 page");
-    }
-    cars2.onclick=function()
-    {
+    };
+    cars2.onclick = function () {
       alert("welcome to car 2 page");
-    }
+    };
   }, []);
   return (
     <div className="home_page">

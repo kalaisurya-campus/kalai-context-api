@@ -1,0 +1,255 @@
+.container {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 31%;
+    max-height: 31vw;
+    background-color: #fff;
+    text-align: center;
+}
+
+.spinner {
+    box-sizing: border-box;
+    margin: auto;
+    width: 128px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 16px solid #0094ff;
+    border-top-color: #00ff94;
+    animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.super-spinner {
+    box-sizing: border-box;
+    position: relative;
+    margin: auto;
+    width: 128px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 16px solid transparent;
+    border-top-color: #0094ff;
+    border-bottom-color: #00ff94;
+    transform: rotateZ(-45deg);
+    animation: super-spinner 5s linear infinite;
+}
+.super-spinner::after {
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    inset: -16px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 16px solid transparent;
+    border-right-color: #0094ff;
+    border-left-color: #00ff94;
+    animation: super-spinner 5s linear infinite;
+}
+@keyframes super-spinner {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(360deg);
+    }
+    75% {
+        transform: rotateZ(720deg);
+    }
+    100% {
+        transform: rotateZ(1080deg);
+    }
+}
+
+.spinception {
+    box-sizing: border-box;
+    position: relative;
+    margin: auto;
+    width: 128px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    border-top: 16px solid #0094ff;
+    border-bottom: 16px solid #0094ff;
+    animation: spinception 2s linear infinite;
+}
+.spinception::before {
+    box-sizing: border-box;
+    position: absolute;
+    inset: 32px;
+    margin: auto;
+    content: "";
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    border-top: 16px solid #00ff9f;
+    border-bottom: 16px solid #00ff94;
+    animation: spinception 1s linear infinite;
+    animation-direction: reverse;
+}
+.spinception::after {
+    box-sizing: border-box;
+    position: absolute;
+    inset: 48px;
+    margin: auto;
+    content: "";
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    border-top: 8px solid #0094ff;
+    border-bottom: 8px solid #0094ff;
+    animation: spinception 4s linear infinite;
+}
+@keyframes spinception {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.dots::before {
+    border-radius: 50%;
+    width: 16px;
+    aspect-ratio: 1/1;
+    background-color: #0094ff;
+    position: absolute;
+    inset: 0;
+    content: "";
+    transform: translateX(-32px);
+    animation: dots 1s ease infinite;
+}
+.dots {
+    border-radius: 50%;
+    width: 16px;
+    aspect-ratio: 1/1;
+    background-color: #0094ff;
+    position: relative;
+    margin: auto;
+    animation: dots 1s ease infinite;
+    animation-delay: 250ms;
+}
+.dots::after {
+    border-radius: 50%;
+    width: 16px;
+    aspect-ratio: 1/1;
+    background-color: #0094ff;
+    position: absolute;
+    inset: 0;
+    content: "";
+    transform: translateX(32px);
+    animation: dots 1s ease infinite;
+    animation-delay: 500ms;
+}
+@keyframes dots {
+    0%,
+    100% {
+        background-color: #0094ff;
+    }
+    50% {
+        background-color: #00ff94;
+    }
+}
+
+.queueing-dots {
+    border-radius: 50%;
+    width: 16px;
+    aspect-ratio: 1/1;
+    background-color: #0094ff;
+    position: relative;
+    margin: auto;
+    box-shadow: -32px 0px 0px 0px #0094ff, 0px 0px 0px 0px #0094ff, 32px 0px 0px 0px #0094ff;
+    animation: queueing-dots 1s ease-in-out infinite;
+}
+@keyframes queueing-dots {
+    0% {
+        box-shadow: -32px 0px 0px 0px #00ff94, 32px 0px 0px 0px #0094ff;
+        transform: translateX(0);
+    }
+    20% {
+        box-shadow: -32px -16px 0px 0px #00ff94, 32px 0px 0px 0px #0094ff;
+    }
+    50% {
+        transform: translateX(-32px);
+    }
+    60% {
+        box-shadow: 64px -16px 0px 0px #00ff94, 32px 0px 0px 0px #0094ff;
+    }
+    80% {
+        box-shadow: 64px 0px 0px 0px #00ff94, 32px 0px 0px 0px #0094ff;
+    }
+    100% {
+        box-shadow: 64px 0px 0px 0px #0094ff, 32px 0px 0px 0px #0094ff;
+        transform: translateX(-32px);
+    }
+}
+
+.liquid-dots {
+    border-radius: 50%;
+    width: 16px;
+    aspect-ratio: 1/1;
+    background-color: #0094ff;
+    position: relative;
+    margin: auto;
+    box-shadow: 32px 0px 0px 0px #0094ff, -32px 0px 0px 0px #0094ff;
+}
+.liquid-dots::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    width: 16px;
+    aspect-ratio: 1/1;
+    background-color: #0094ff;
+    animation: liquid-dots 2s linear infinite;
+}
+@keyframes liquid-dots {
+    0% {
+        opacity: 0;
+        transform: translateX(-32px) scale(1, 1);
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(-32px) scale(1, 1);
+    }
+    20% {
+        transform: translateX(-24px) scale(1.2, 0.8);
+    }
+    30% {
+        transform: translateX(-16px) scale(0.7, 0.7);
+    }
+    40% {
+        transform: translateX(-8px) scale(1.2, 0.7);
+    }
+    50% {
+        transform: translateX(0px) scale(1, 1);
+    }
+    60% {
+        transform: translateX(8px) scale(1.2, 0.7);
+    }
+    70% {
+        transform: translateX(16px) scale(0.7, 0.7);
+    }
+    80% {
+        transform: translateX(24px) scale(1.2, 0.8);
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(32px) scale(1, 1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(32px) scale(0.9, 0.9);
+    }
+}
+.split {
+    position: absolute;
+    left: 0;
+    top: 10%;
+}

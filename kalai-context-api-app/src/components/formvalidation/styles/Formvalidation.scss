@@ -1,0 +1,84 @@
+.main-table-content-kalai {
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid red;
+    .tabs-kalai {
+        display: flex;
+        justify-content: space-around;
+        border: 2px solid blue;
+        .tab-list {
+            width: 100%;
+            border: 3px solid green;
+            text-align: center;
+        }
+    }
+}
+
+.active {
+    background-color: cyan;
+    color: black;
+}
+
+.empty-box {
+    width: 100%;
+    height: 600px;
+    border: 2px solid red;
+    margin-top: 30px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.dark {
+    background-color: black;
+    // color: white;
+    h1 {
+        color: aqua;
+    }
+    .ps {
+        color: blue !important;
+        font-size: 3rem;
+    }
+    .btns {
+        background-color: white;
+        color: black;
+    }
+    .loream {
+        color: orange;
+        font-size: 30px;
+    }
+    .loreams {
+        color: red;
+    }
+}
+.light {
+    background-color: white;
+    color: black;
+}
+h1 {
+    font-size: 4rem;
+    color: orange;
+}
+.ps {
+    color: red;
+    font-size: 3rem;
+}
+
+.btns {
+    background-color: red;
+    padding: 5px 20px;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+}
+.loreams {
+    color: cyan;
+    font-size: 3rem;
+}
+
+.top-btn-dark {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+}

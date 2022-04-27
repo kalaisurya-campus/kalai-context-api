@@ -1,36 +1,4 @@
-.navbars {
-    width: 100%;
-    height: 100px;
-
-    .navbar_list {
-        display: flex;
-        width: 100%;
-
-        background-color: cyan;
-        .left_nabar {
-            width: 50%;
-        }
-        .right_navbar {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-
-            .links {
-                text-decoration: none;
-                color: black;
-            }
-            .logout {
-                padding: 10px;
-                border: none;
-                outline: none;
-                background-color: blue;
-                color: white;
-                font-weight: 700;
-                cursor: pointer;
-                border-radius: 10px;
-            }
-            @import url("https://fonts.googleapis.com/css2?family=Jaldi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jaldi&display=swap");
 
 * {
     box-sizing: border-box;
@@ -46,7 +14,6 @@
     -webkit-transition-delay: 0.5s;
     transition-delay: 0.5s;
     height: 100vh;
-    width:100vw;
 }
 
 .container {
@@ -60,7 +27,7 @@
     transition: filter 0.3s ease;
     -webkit-transition-delay: 0.5s;
     transition-delay: 0.5s;
-    // height: 30px;
+    height: 200px;
 }
 
 /* Dark Mode */
@@ -137,8 +104,4 @@ input[type="checkbox"]:checked + .app .toggle .light {
 
 input[type="checkbox"]:checked + .app .toggle .dark {
     opacity: 1;
-}
-
-        }
-    }
 }
